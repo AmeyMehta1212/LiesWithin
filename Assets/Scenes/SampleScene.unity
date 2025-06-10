@@ -202,7 +202,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 455202916}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: ExitGame
         m_Mode: 1
@@ -513,7 +513,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 455202916}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: RestartGame
         m_Mode: 1
@@ -1048,6 +1048,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 455202915}
+  - component: {fileID: 455202916}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1070,6 +1071,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &455202916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455202913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a4ca988140459d47933d52ceea3d323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &465516816
 GameObject:
   m_ObjectHideFlags: 0
@@ -1276,7 +1289,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 488086307}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 455202916}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 722841535}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &488086307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1534,7 +1571,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 455202916}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: ExitGame
         m_Mode: 1
@@ -2733,7 +2770,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1330037214}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1674562446}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: OnFakeButtonClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1330037214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3295,6 +3344,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1674562444}
   - component: {fileID: 1674562445}
+  - component: {fileID: 1674562446}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -3330,6 +3380,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   journalText: {fileID: 1338332698}
+--- !u!114 &1674562446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674562442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d645bcf0edd694bba3dea9c5b5d199, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionPanel: {fileID: 1576716835}
+  fakeButton: {fileID: 1330037213}
+  realButton: {fileID: 1791689406}
+  feedbackText: {fileID: 1366305113}
+  restartButton: {fileID: 109252194}
+  exitButton: {fileID: 549474487}
+  startPanel: {fileID: 722841535}
+  gameOverPanel: {fileID: 561425811}
+  scoreText: {fileID: 1338332698}
+  highScoreText: {fileID: 1284105930}
 --- !u!1 &1678747026
 GameObject:
   m_ObjectHideFlags: 0
@@ -3849,7 +3921,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1791689407}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1674562446}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: OnRealButtonClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1791689407
 MonoBehaviour:
   m_ObjectHideFlags: 0

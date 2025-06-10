@@ -28,13 +28,19 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
+        Debug.Log("StartGame called!");
+
         gameStarted = true;
         gameOver = false;
         score = 0;
         Time.timeScale = 1f;
+
+        Debug.Log("Time.timeScale set to 1");
+
         UIManager.Instance?.HideStartScreen();
         UIManager.Instance?.UpdateScoreUI(score, highScore);
     }
+
 
     public void AddScore(int value)
     {
@@ -87,3 +93,5 @@ public class GameManager : MonoBehaviour
         return score;
     }
 }
+
+  

@@ -13,27 +13,32 @@ public class LieMarker : MonoBehaviour
         UpdateAppearance();
     }
 
+    // Called when the player interacts (e.g. presses "E")
     public void Interact()
     {
         if (hasBeenAnswered) return;
 
-        hasBeenAnswered = true;
-        Object.FindAnyObjectByType<UIManager>()?.ShowInteractionPrompt(this);
+        UIManager.Instance?.ShowInteractionPrompt(this);
     }
 
+    // Called by UIManager after answer is processed
     public bool IsLie()
     {
         return isLie;
     }
 
+    // Called only if answer is correct
     public void MarkAsChecked()
     {
+        hasBeenAnswered = true;
         UpdateAppearance();
+        gameObject.SetActive(false); // Optional: hide object after it's handled
     }
 
     void UpdateAppearance()
     {
         var renderer = GetComponent<Renderer>();
-        renderer.material = isLie ? lieMaterial : truthMaterial;
+        if (renderer != null)
+            renderer.material = isLie ? lieMaterial : truthMaterial;
     }
 }

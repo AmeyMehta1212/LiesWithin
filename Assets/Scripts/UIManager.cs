@@ -102,6 +102,42 @@ public class UIManager : MonoBehaviour
             gameOverPanel.SetActive(true);
     }
 
+    public void OnFakeButtonClicked()
+    {
+        EvaluateAnswer(playerChoseFake: true);
+    }
+
+    public void OnRealButtonClicked()
+    {
+        EvaluateAnswer(playerChoseFake: false);
+    }
+
+    private void EvaluateAnswer(bool playerChoseFake)
+    {
+        if (currentMarker == null) return;
+
+        bool isActuallyLie = currentMarker.IsLie();
+        bool answerCorrect = (playerChoseFake == isActuallyLie);
+
+        if (answerCorrect)
+        {
+            Object.FindAnyObjectByType<JournalManager>()?.LogMessage(currentMarker.name + " was correctly identified.");
+            GameManager.Instance?.AddScore(10); // optional score
+            currentMarker.MarkAsChecked();
+            interactionPanel.SetActive(false);
+        }
+        else
+        {
+            GameManager.Instance?.GameOver();
+        }
+    }
+
+    public void DebugPlayClick()
+    {
+        Debug.Log("Play Button was clicked.");
+    }
+
+
     public void UpdateScoreUI(int score, int highScore)
     {
         if (scoreText != null)
